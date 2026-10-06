@@ -1,0 +1,13 @@
+# Infrastructure for the briefs on this rung. The scaffold itself runs on
+# embedded H2 and uses NONE of these — wiring one in is the work:
+#
+#   docker compose up -d postgres
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
